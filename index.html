@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020604">
+<title>KING PLATFORM</title>
+<style>
+:root{--g:#00ff66;--bg:#020604}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#020604;color:#eafff2}
+body{font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+button,a{font:inherit}
+#site{position:relative;width:100%;min-height:100dvh;overflow:hidden;background:#020604}
+/* Full-screen visual bed: prevents empty black space on tall phones/tablets. */
+#screen-bg{position:fixed;z-index:0;inset:0;overflow:hidden;background:#020604;pointer-events:none}
+#screen-bg::before{content:"";position:absolute;inset:-8%;background:url("king-reference.png") center/cover no-repeat;filter:blur(18px) brightness(.34) saturate(1.15);transform:scale(1.08)}
+#screen-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,8,4,.18),rgba(0,5,3,.55))}
+#stage{position:relative;z-index:1;width:100%;min-height:100dvh;margin:0 auto;overflow:hidden;isolation:isolate}
+#hero{display:block;width:100%;height:auto;margin:0;padding:0;border:0;position:relative;z-index:2;user-select:none;-webkit-user-drag:none}
+#extension{position:relative;z-index:1;width:100%;min-height:max(0px,calc(100dvh - (100vw * 1.5)));margin:0;overflow:hidden;background:transparent}
+#extension::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,255,102,.035),rgba(0,0,0,.16) 60%,rgba(0,0,0,.42)),url("king-reference.png") center bottom/cover no-repeat;filter:blur(1.2px);transform:scale(1.02);opacity:.82}
+#extension::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 12%,rgba(0,255,102,.07),transparent 32%);pointer-events:none}
+/* One restrained animation only. */
+.light-pass{position:absolute;z-index:4;top:0;bottom:0;left:-20%;width:12%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(190,255,220,.08),transparent);filter:blur(5px);transform:skewX(-10deg);animation:lightpass 16s ease-in-out infinite;opacity:.35}
+.ambient{position:absolute;z-index:3;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 32%,rgba(0,255,102,.035),transparent 28%);animation:ambient 9s ease-in-out infinite alternate}
+.hit{position:absolute;z-index:10;border:0;background:transparent;padding:0;margin:0;cursor:pointer;outline:none;display:block}
+.hit:focus-visible{outline:1px solid rgba(0,255,102,.7);outline-offset:-4px;border-radius:18px}
+.hit:active{filter:brightness(1.06)}
+.bot{left:14%;right:14%;top:50%;height:8.8%}
+.gift{left:14%;right:14%;top:59.8%;height:8.8%}
+.dev{left:14%;right:14%;top:69.7%;height:8.8%}
+.modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(7px)}
+.modal.open{display:grid;animation:fade .18s ease-out}
+.modal-card{width:min(560px,92vw);position:relative;border:1px solid rgba(0,255,102,.48);border-radius:18px;padding:26px 20px 22px;background:linear-gradient(145deg,rgba(0,28,14,.97),rgba(0,7,4,.99));box-shadow:0 0 34px rgba(0,255,102,.14),inset 0 0 24px rgba(0,255,102,.04);text-align:center}
+.modal-title{color:var(--g);font-size:22px;font-weight:800;margin:0 0 18px}
+.modal-text{font-size:18px;line-height:1.9;color:#e8fff2;margin:0}
+.close{position:absolute;top:8px;left:10px;width:38px;height:38px;border:1px solid rgba(0,255,102,.28);border-radius:50%;background:#03130a;color:var(--g);font-size:24px;cursor:pointer}
+.modal-actions{display:flex;justify-content:center;margin-top:20px}.modal-actions button{border:1px solid rgba(0,255,102,.34);border-radius:12px;padding:10px 18px;background:#02170b;color:var(--g);cursor:pointer}
+@keyframes lightpass{0%,62%{left:-20%;opacity:0}70%{opacity:.35}82%{opacity:.16}100%{left:118%;opacity:0}}
+@keyframes ambient{0%{opacity:.45}100%{opacity:.85}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(min-width:1025px){#stage{max-width:1024px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+</style>
+</head>
+<body>
+<main id="site">
+<div id="screen-bg" aria-hidden="true"></div>
+<section id="stage" aria-label="KING PLATFORM">
+<img id="hero" src="king-reference.png" alt="KING PLATFORM" draggable="false">
+<div class="ambient" aria-hidden="true"></div>
+<div class="light-pass" aria-hidden="true"></div>
+<a class="hit bot" href="https://t.me/King1500hackBOT" target="_blank" rel="noopener noreferrer" aria-label="بوت تلجرام مالتي"></a>
+<button class="hit gift" type="button" aria-label="الهدية الملكية"></button>
+<a class="hit dev" href="https://t.me/FXK_I" target="_blank" rel="noopener noreferrer" aria-label="تواصل مع مطور"></a>
+<div id="extension" aria-hidden="true"></div>
+</section>
+</main>
+<div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+<div class="modal-card"><button class="close" id="closeGift" type="button" aria-label="إغلاق">×</button><h2 class="modal-title" id="giftTitle">الهدية الملكية</h2><p class="modal-text">اي اداة بايثون بالك اسوي فقط راسل مطور بوت من خلال ضغط على قسم مطور في منصة</p><div class="modal-actions"><button id="modalDev" type="button">تواصل مع المطور</button></div></div>
+</div>
+<script>
+const modal=document.getElementById('giftModal');
+const openGift=document.querySelector('.gift');
+const closeGift=document.getElementById('closeGift');
+const modalDev=document.getElementById('modalDev');
+function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';closeGift.focus()}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';openGift.focus()}
+openGift.addEventListener('click',openModal);
+closeGift.addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+modalDev.addEventListener('click',()=>window.open('https://t.me/FXK_I','_blank','noopener,noreferrer'));
+</script>
+</body>
+</html>
